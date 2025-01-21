@@ -1,0 +1,20 @@
+class Solution {
+    public String reverseWords(String s) {
+        // Split the input string into words
+        String[] words = s.split(" ");
+        StringBuilder wo = new StringBuilder();
+
+        // Iterate through the words array in reverse
+        for (int i = words.length - 1; i >= 0; i--) {
+            if (!words[i].isEmpty()) { // Ignore empty strings caused by extra spaces
+                wo.append(words[i]); // Append the word
+                if (i != 0) { // Add a space if it's not the last word
+                    wo.append(" ");
+                }
+            }
+        }
+
+        // Convert StringBuilder to String and return
+        return wo.toString().trim();
+    }
+}
