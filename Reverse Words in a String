@@ -8,10 +8,10 @@ class Solution {
         for (int i = words.length - 1; i >= 0; i--) {
             if (!words[i].isEmpty()) 
 { 
-//Ignore empty strings caused by extra spaces
+//Ignore the empty strings 
                 wo.append(words[i]); // Append the word
                 if (i != 0) { 
-//Add a space if it's not the last word
+//Add space if it is not the last word
                     wo.append(" ");
                 }
             }
