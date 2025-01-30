@@ -1,19 +1,17 @@
 import java.util.Scanner;
 public class Main {
-public static void selection(int arr[],int n){
-		for(int i=0;i<n;i++)
+public static void bselection(int arr[],int n){
+		for(int i=0;i<n-1;i++)
 		{
-			int min = i;
-			for(int j=i+1;j<n;j++)
+			for(int j=i+1;j<n-1;j++)
 			{
 				if(arr[i]>arr[j])
 				{
-					min = j;
+					int temp = arr[j];
+					arr[j] = arr[i];
+					arr[i]=temp;
 				}
 			}
-			int temp = arr[min];
-			arr[min] = arr[i];
-		    arr[i] = temp;
 		}
 }
 public static void main(String[] args) {
@@ -27,7 +25,7 @@ public static void main(String[] args) {
 			arr[i] = sc.nextInt();
 		}
 		// here we have just implemented the selection sort algorithm
-        selection(arr,n);
+        bselection(arr,n);
 		System.out.println("After swapping the elements : ");
 		for(int i=0; i<n;i++)
 		{
